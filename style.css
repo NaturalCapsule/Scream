@@ -1,21 +1,13 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  /* background: linear-gradient(135deg, #000000, #1a0000, #b00020, #8b0000); */
-  /* background: linear-gradient(135deg, #000000, #1a0000, #560d0d, #8b0000);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite; */
-  color: #E5E5E5;
-  overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
 }
 
-body, html {
-  /* height: 100vh; */
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  overflow-x: hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .hero-section {
@@ -26,7 +18,6 @@ body, html {
   background: linear-gradient(135deg, #000000, #1a0000, #560d0d, #8b0000);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
-  height: 100vh;
   padding: 0 20px;
   scroll-snap-align: start;
 }
@@ -93,30 +84,23 @@ body, html {
   100% { background-position: 0% 50%; }
 }
 
-@media (max-width: 500px) {
-  .movie-title {
-    font-size: 2.2rem;
-  }
+.hero-section, .plot-container {
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #000000, #1a0000, #560d0d, #8b0000);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
 
-  .short-overview {
-    font-size: 1rem;
-  }
 }
 
-.plot-container {
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  flex-direction:column;
-  background: linear-gradient(135deg, #000000, #1a0000, #560d0d, #8b0000);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
-  height: 100vh;
-  /* max-width: 700px; */
-  /* margin: 80px auto; */
-  padding: 0 20px;
-  scroll-snap-align: start;
-}
+
 
 .main-plot {
   text-align: center;
@@ -133,9 +117,16 @@ body, html {
   color: #FFFFFF;
 }
 
-.hero-section, .plot-container {
-  margin: 0 auto;
-  padding: 60px 20px;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .character-container {
@@ -143,17 +134,19 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    90deg,
-    #000 0%,
-    rgba(0, 80, 0, 0.6) 40%,
-    #000 80%
+  background: linear-gradient(-45deg,
+    #0c1b33,
+    #1a2639,
+    #3e4e59,
+    #8a8f94
   );
-  background-size: 200% 100%;
-  animation: gradientWave 15s ease infinite;
-  height: 100vh;
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
   padding: 0 20px;
   scroll-snap-align: start;
+  position: relative;
+  z-index: 10;
 }
 
 .character-description {
@@ -190,27 +183,23 @@ body, html {
   margin: 0 auto;
 }
 
-@keyframes gradientWave {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 0%; }
-  100% { background-position: 0% 0%; }
-}
-
 .side-character-container {
   gap: 40px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(
-    90deg,
-    #000 0%,
-    rgba(0, 80, 0, 0.6) 40%,
-    #000 80%
-  );
+background: linear-gradient(-45deg,
+  #003b46,
+  #07575b,
+  #66a5ad,
+  #c4dfe6
+);
   scroll-snap-align: start;
   background-size: 200% 100%;
-  animation: gradientWave 15s ease infinite;
-  height: 200vh;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
   padding: 0 20px;
+    position: relative;
+    z-index: 10;
 }
 
 .side-character {
@@ -250,21 +239,31 @@ body, html {
   margin-bottom: 100px;
 }
 
+
+@keyframes gradientWave {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
+
 .killer-container {
-  gap: 40px;
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
     90deg,
     #000 0%,
     rgba(139, 0, 0, 1) 40%,
     #000 80%
-  );
-  scroll-snap-align: start;
-  background-size: 200% 100%;
-  animation: gradientWave 15s ease infinite;
-  height: 200vh;
-  padding: 0 20px;
+    );
+    background-size: 200% 100%;
+    animation: gradientWave 15s ease infinite;
+    height: 100vh;
+    padding: 0 20px;
+    scroll-snap-align: start;
+
+    position: relative;
+    z-index: 10;
 }
 
 .hidden {
@@ -305,4 +304,135 @@ body, html {
   object-fit: cover;
   display: block;
   margin: 0 auto;
+}
+
+
+
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+
+@media (max-width: 1024px) {
+  .plot-container,
+  .hero-section,
+  .character-container,
+  .side-character-container,
+  .killer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .plot-container {
+    height: 100vh;
+  }
+
+  .character-container {
+    height: 100vh;
+  }
+
+
+  .killer-img,
+  .character-img,
+  .side-character-img {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .side-character,
+  .side-character-description,
+  .killer-description {
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .killer-description {
+    padding-right: 0;
+  }
+
+  .side-character-description,
+  .killer-description {
+    padding-right: 0;
+  }
+
+  .character-text {
+    padding-right: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+}
+
+
+
+@media (max-height: 1024px) {
+  .plot-container,
+  .hero-section,
+  .character-container,
+  .side-character-container,
+  .killer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .plot-container {
+    height: 100vh;
+  }
+
+  .character-container {
+    height: 100vh;
+  }
+
+  .killer-img,
+  .character-img,
+  .side-character-img {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .side-character,
+  .side-character-description,
+  .killer-description {
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .killer-description {
+    padding-right: 0;
+  }
+
+  /* Remove desktop-only offsets */
+  .side-character-description,
+  .killer-description {
+    padding-right: 0;
+  }
+
+  .character-text {
+    padding-right: 0;
+    text-align: center;
+    align-items: center;
+  }
+
 }
