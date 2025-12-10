@@ -1,0 +1,438 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+  background: linear-gradient(135deg, #000000, #1a0000, #560d0d, #8b0000);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  padding: 0 20px;
+  scroll-snap-align: start;
+}
+
+.movie-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.text-block {
+  text-align: left;
+  width: 100%;
+  max-width: 700px;
+}
+
+.short-overview {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #D6D6D6;
+}
+
+.director {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.director strong {
+  color: #FFFFFF;
+}
+
+.genre {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+
+.genre li {
+  position: relative;
+  padding-left: 18px;
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #CFCFCF;
+}
+
+.genre li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #B00020;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-section, .plot-container {
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #000000, #1a0000, #560d0d, #8b0000);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+
+}
+
+
+
+.main-plot {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.plot-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.character-container {
+  gap: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg,
+    #0c1b33,
+    #1a2639,
+    #3e4e59,
+    #8a8f94
+  );
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+  padding: 0 20px;
+  scroll-snap-align: start;
+  position: relative;
+  z-index: 10;
+}
+
+.character-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction:column;
+}
+
+.character-text {
+  text-align: center;
+  font-size: 20px;
+  max-width: 500px;
+}
+
+.main-character {
+  font-size: 40px;
+}
+
+.character-pic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+
+.character-img {
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.side-character-container {
+  gap: 40px;
+  display: flex;
+  justify-content: center;
+background: linear-gradient(-45deg,
+  #003b46,
+  #07575b,
+  #66a5ad,
+  #c4dfe6
+);
+  scroll-snap-align: start;
+  background-size: 200% 100%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.side-character {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  padding: 100px;
+}
+
+.side-character-description {
+  padding-right: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+}
+
+.side-character {
+  font-size: 40px;
+}
+
+.side-character-pic-container {
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  gap: 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.side-character-img {
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
+@keyframes gradientWave {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
+
+.killer-container {
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+    90deg,
+    #000 0%,
+    rgba(139, 0, 0, 1) 40%,
+    #000 80%
+    );
+    background-size: 200% 100%;
+    animation: gradientWave 15s ease infinite;
+    height: 100vh;
+    padding: 0 20px;
+    scroll-snap-align: start;
+
+    position: relative;
+    z-index: 10;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.killer-description {
+  padding-right: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+}
+
+.killer-character {
+  text-align: center;
+  font-size: 40px;
+}
+
+.killer-pic-container {
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  gap: 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.killer-img {
+  border-radius: 20px;
+  max-width: 600px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+
+@media (max-width: 1024px) {
+  .plot-container,
+  .hero-section,
+  .character-container,
+  .side-character-container,
+  .killer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .plot-container {
+    height: 100vh;
+  }
+
+  .character-container {
+    height: 100vh;
+  }
+
+
+  .killer-img,
+  .character-img,
+  .side-character-img {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .side-character,
+  .side-character-description,
+  .killer-description {
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .killer-description {
+    padding-right: 0;
+  }
+
+  .side-character-description,
+  .killer-description {
+    padding-right: 0;
+  }
+
+  .character-text {
+    padding-right: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+}
+
+
+
+@media (max-height: 1024px) {
+  .plot-container,
+  .hero-section,
+  .character-container,
+  .side-character-container,
+  .killer-container {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .plot-container {
+    height: 100vh;
+  }
+
+  .character-container {
+    height: 100vh;
+  }
+
+  .killer-img,
+  .character-img,
+  .side-character-img {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .side-character,
+  .side-character-description,
+  .killer-description {
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .killer-description {
+    padding-right: 0;
+  }
+
+  /* Remove desktop-only offsets */
+  .side-character-description,
+  .killer-description {
+    padding-right: 0;
+  }
+
+  .character-text {
+    padding-right: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+}
