@@ -184,7 +184,7 @@ body {
 }
 
 .side-character-container {
-  gap: 40px;
+  /* gap: 40px; */
   display: flex;
   justify-content: center;
 background: linear-gradient(-45deg,
@@ -194,18 +194,22 @@ background: linear-gradient(-45deg,
   #c4dfe6
 );
   scroll-snap-align: start;
-  background-size: 200% 100%;
+  /* background-size: 200% 100%; */
+  background-size: 400% 400%;
+
   animation: gradient 15s ease infinite;
   height: 100vh;
-  padding: 0 20px;
+  /* padding: 0 20px; */
     position: relative;
     z-index: 10;
 }
 
 .side-character {
-  margin-top: 200px;
-  margin-bottom: 200px;
-  padding: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .side-character-description {
